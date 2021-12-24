@@ -4,7 +4,6 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
 var contentRouter = require("./routes/content");
 const bodyParser = require("body-parser");
 
@@ -21,7 +20,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.text({ type: "text/*" }));
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
 app.use("/content", contentRouter);
 
 var listener = app.listen(8080, function () {
